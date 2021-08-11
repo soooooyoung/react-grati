@@ -1,5 +1,6 @@
 import React from "react";
 import { RootStore } from "../stores";
+import "./MainPage.scss";
 
 type Props = {
   rootStore: RootStore;
@@ -7,7 +8,7 @@ type Props = {
 
 class MainPage extends React.Component<Props> {
   render() {
-    return <>mainpage</>;
+    return <div className="mainpage">mainpage</div>;
   }
 }
 
