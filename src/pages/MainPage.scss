@@ -59,6 +59,7 @@
       .title {
         font-size: 61.52px;
         font-family: "Roboto Condensed";
+        animation: wipe-enter 2s ease-in-out;
         color: #fff;
       }
       .subcontent {
@@ -71,5 +72,14 @@
         color: #fff;
       }
     }
+  }
+}
+
+@keyframes wipe-enter {
+  0% {
+    transform: scale(0, 0.5);
+  }
+  50% {
+    transform: scale(1, 0.5);
   }
 }
