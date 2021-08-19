@@ -1,7 +1,7 @@
 .navigation-bar {
   width: 100%;
-  height: 75px;
-  background-color: #000;
+  height: 80px;
+  background-color: transparent;
   .navigation-logo {
     cursor: pointer;
     float: left;
@@ -12,37 +12,35 @@
   }
 
   #navigation-menu {
-    width: 30vw;
-    margin: 16px 5vw 12px 12px;
-
-    float: right;
     background-color: transparent;
     border-bottom-style: none;
 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 0px;
+
     .ant-menu-item {
-      margin: 0px auto;
-      color: #3bffff !important;
-      text-shadow: 2px 2px #ff44c0;
-      font-size: 19px;
+      color: #000;
+      font-size: 18px;
       font-weight: 300;
-      text-align: left;
+      font-family: "Poppins";
+      width: 10vw;
+      text-align: center;
     }
     .ant-menu-item-selected {
-      color: #3bffff;
       font-weight: 500;
-      text-shadow: 2px 2px #ff44c0;
     }
     .ant-menu-item:hover {
       .ant-menu-title-content {
-        color: #ff44c0;
-        text-shadow: 2px 2px #3bffff;
+        font-weight: 400;
       }
     }
     .ant-menu-item::after {
       border-style: none;
     }
     .ant-menu-overflow-item-rest {
-      color: #3bffff;
+      color: #000;
     }
   }
 }

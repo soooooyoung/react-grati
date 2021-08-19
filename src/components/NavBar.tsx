@@ -1,8 +1,8 @@
 import React from "react";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
-import logo from "../img/logo_ramdo.png";
-// import golo from "../img/logo_doram.png";
+import logo from "../img/logo_navy.png";
+
 import "./NavBar.scss";
 
 export default class NavBar extends React.Component {
@@ -13,17 +13,21 @@ export default class NavBar extends React.Component {
           <img className="logo" src={logo} alt="" />
         </div>
         <Menu id="navigation-menu" mode="horizontal">
-          <Menu.Item key="1" title="Home">
+          <Menu.Item key="home" title="Home">
             <Link to="/" />
-            Home
+            HOME
           </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/ramdotron" />
-            Ramdotron
+          <Menu.Item key="journal">
+            <Link to="/journal" />
+            JOURNAL
           </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="/guide" />
-            Guide
+          <Menu.Item key="review">
+            <Link to="/review" />
+            REVIEW
+          </Menu.Item>
+          <Menu.Item key="about">
+            <Link to="/about" />
+            ABOUT
           </Menu.Item>
         </Menu>
       </div>

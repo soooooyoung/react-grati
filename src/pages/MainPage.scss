@@ -1,4 +1,75 @@
 .mainpage {
-  background: linear-gradient(180deg, #000 50%, #fff 50%);
   min-height: 100vh;
+
+  .section {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    transition-duration: 1s;
+    @media only screen and (max-width: 1280px) {
+      width: 100%;
+    }
+    .main2 {
+      padding: 5vw;
+      width: 100%;
+      margin: auto;
+    }
+
+    .content {
+      padding: 5vw;
+      .title {
+        font-size: 30px;
+        font-family: "Montserrat";
+        font-weight: 500;
+      }
+      .description {
+        width: 100%;
+        font-size: 20px;
+        font-family: "Montserrat";
+        font-weight: 200;
+      }
+      a {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .main {
+    height: 80vh;
+    .title-bg {
+      background: url("../img/main1.jpg") 50% no-repeat;
+
+      height: 100%;
+      width: 100%;
+      transform: scale(1);
+      transition: 3s;
+      background-size: cover;
+      background-position-y: 20%;
+      @media only screen and (max-width: 1280px) {
+      }
+    }
+
+    .title-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translate(0, -50%);
+      text-align: center;
+
+      .title {
+        font-size: 61.52px;
+        font-family: "Roboto Condensed";
+        color: #fff;
+      }
+      .subcontent {
+        margin-top: 33px;
+        font-size: 24px;
+        line-height: 18px;
+        font-weight: 300;
+        font-style: italic;
+        font-family: "Poppins";
+        color: #fff;
+      }
+    }
+  }
 }

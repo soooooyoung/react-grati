@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <Affix>
-        <NavBar />{" "}
+        <NavBar />
       </Affix>
-      <Route path="/" component={MainPage} />
+      <Route exact path="/" component={MainPage} />
     </>
   );
 }
