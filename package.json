@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build; rm build/grati.zip; zip -r build/grati.zip build; scp -i ~/.ssh/grati-ssh-key.key build/grati.zip ubuntu@193.123.255.20:~/grati.zip;",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
