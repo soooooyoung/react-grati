@@ -1,0 +1,35 @@
+.loginpage {
+  #loginform {
+    .title {
+      font-size: 30px;
+      font-family: "Poppins";
+      margin-bottom: 30px;
+    }
+    margin-top: 100px;
+    input {
+      line-height: 30px;
+      border-radius: 10px;
+    }
+
+    .loginBtn,
+    .signupBtn {
+      width: 100%;
+
+      height: 50px;
+      border-radius: 10px;
+      background-color: #0a1963;
+      color: #fff;
+      font-size: 20px;
+      font-family: "Poppins";
+      border-style: none;
+    }
+    .signupBtn {
+      background-color: #9b9b9b;
+    }
+
+    .loginBtn:hover,
+    .signupBtn:hover {
+      opacity: 50%;
+    }
+  }
+}

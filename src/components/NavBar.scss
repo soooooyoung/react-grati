@@ -1,3 +1,10 @@
+#navigation-bar-xs {
+  position: absolute;
+  visibility: hidden;
+}
+.ant-dropdown-menu {
+  visibility: hidden;
+}
 .navigation-bar {
   width: 100%;
   height: 80px;
@@ -41,6 +48,63 @@
     }
     .ant-menu-overflow-item-rest {
       color: #000;
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .navigation-bar {
+    visibility: hidden;
+    position: absolute;
+    //   z-index: 10;
+    //   background-color: transparent !important;
+    //   .navigation-logo {
+    //     filter: brightness(0%);
+    //     background-color: transparent;
+    //   }
+
+    //   top: 0px;
+    //   #navigation-menu {
+    //     visibility: hidden;
+    //   }
+    // }
+    // .ant-affix {
+    //   visibility: hidden;
+  }
+  #navigation-bar-xs {
+    z-index: 10;
+    visibility: visible;
+    right: 20px;
+    background-color: transparent;
+    .ant-dropdown-link {
+      color: #000;
+      text-decoration: none;
+      font-size: 35px;
+      background-color: transparent;
+    }
+  }
+
+  .ant-affix {
+    #navigation-bar-xs {
+      .ant-dropdown-link {
+        color: #000;
+      }
+    }
+  }
+  .ant-dropdown-menu {
+    visibility: visible;
+  }
+}
+.ant-dropdown-menu {
+  .ant-dropdown-menu-item {
+    padding: 20px;
+  }
+  .ant-dropdown-menu-title-content {
+    font-size: 30px;
+    font-family: "Poppins";
+  }
+  .ant-dropdown-menu-item:hover {
+    .ant-dropdown-menu-title-content {
+      color: rgb(130, 0, 170);
     }
   }
 }
