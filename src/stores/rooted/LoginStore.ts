@@ -1,5 +1,6 @@
 import { action, computed, observable } from "mobx";
 import RootedStore from "./RootedStore";
+import GratiRepository from "../../grati/GratiRepository";
 
 export default class LoginStore extends RootedStore {
   @observable private _loading = false;
@@ -9,10 +10,17 @@ export default class LoginStore extends RootedStore {
   ) as string;
 
   @action.bound
-  login(username: string, password: string) {
+  async login(username: string, password: string) {
     this._loading = true;
 
     try {
+      // TODO:  check username and password format
+      const response = await GratiRepository.login(username, password);
+      if (response) {
+        if (response.data.status === "success" && response.data.loginId) {
+          localStorage.setItem("loginId", response.data.loginId);
+        }
+      }
     } catch (e) {
       alert("Check Your Username or Password");
     } finally {

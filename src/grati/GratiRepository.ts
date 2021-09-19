@@ -3,10 +3,11 @@ import axios, { AxiosResponse } from "axios";
 
 interface GratiResponse {
   status: string;
+  loginId?: string;
   data?: any;
 }
 
-export default class GratiRepository {
+class GratiRepository {
   private url = env.server;
 
   private processResponse = (response: AxiosResponse<GratiResponse>) => {
@@ -33,3 +34,4 @@ export default class GratiRepository {
       .then((response) => this.processResponse(response));
   };
 }
+export default new GratiRepository();
