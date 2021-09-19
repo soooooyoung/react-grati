@@ -1,5 +1,6 @@
 import { env } from "./env";
 import axios, { AxiosResponse } from "axios";
+import { LoginParams } from "../models";
 
 interface GratiResponse {
   status: string;
@@ -8,11 +9,13 @@ interface GratiResponse {
 }
 
 class GratiRepository {
-  private url = env.server;
+  private url?: string;
+  constructor() {
+    this.url = env.server;
+  }
 
   private processResponse = (response: AxiosResponse<GratiResponse>) => {
     // TODO handle error and format response
-    console.log("status", response.status);
     return response;
   };
 
@@ -23,13 +26,13 @@ class GratiRepository {
    * @param password
    *
    */
-  public login = async (username: string, password: string) => {
+  public login = async (params: LoginParams) => {
     return await axios
-      .get(`${this.url}`, {
-        params: {
-          username,
-          password,
+      .post(`${this.url}/api/v1/signin`, {
+        Headers: {
+          "Content-Type": "application/json",
         },
+        ...params,
       })
       .then((response) => this.processResponse(response));
   };

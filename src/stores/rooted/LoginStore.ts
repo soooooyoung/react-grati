@@ -15,18 +15,37 @@ export default class LoginStore extends RootedStore {
 
     try {
       // TODO:  check username and password format
-      const response = await GratiRepository.login(username, password);
+      const response = await GratiRepository.login({ username, password });
       if (response) {
         if (response.data.status === "success" && response.data.loginId) {
           localStorage.setItem("loginId", response.data.loginId);
+          return response;
         }
       }
     } catch (e) {
       alert("Check Your Username or Password");
-    } finally {
-      this._loading = false;
     }
+    this._loading = false;
     this._loginStatus = true;
+  }
+
+  @action.bound
+  async checkLoginStatus() {
+    this._loading = true;
+    try {
+      // TODO:  check username and password format
+      // const response = await GratiRepository.checkId();
+      // if (response) {
+      //   if (response.data.status === "success" && response.data.loginId) {
+      //     localStorage.setItem("loginId", response.data.loginId);
+      //     return response;
+      //   }
+      // }
+      this._loginStatus = true;
+    } catch (e) {
+      alert("Check Your Username or Password");
+    }
+    this._loading = false;
   }
 
   @computed
